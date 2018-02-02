@@ -1,0 +1,33 @@
+﻿CDOBJ	CRIT	LIB_CRIT
+008	B02	Berline X02
+008	C02	Coupé X02
+008	J02	Cabriolet X02
+008	B96	Berline X96
+008	J96	Cabriolet X96
+010	L2	2 roues motrices
+010	L4	4 roues motrices
+012	ESS2	Moteur essence type 2
+012	ESS3	Moteur essence type 3
+012	ESS4	Moteur essence type 4
+012	ESS6	Moteur essence type 6
+015	ELISE	Finition Elise
+015	FORM	Finition Form
+015	BUMP	Finition Bump
+026	RLINK1	Rlink 1ière génération
+026	RLINK2	Rlink 2ième génération
+026	RLINK3	Rlnk 3ième génération
+033	DG	Direction à gauche
+033	DD	Direction à droite
+042	TOIT1	Toit ouvran simple vitrage
+042	TOIT2	Toit ouvran double vitrage
+042	TOIT3	Toit ouvran triple vitrage
+055	CUIR1	Cuir veau
+055	CUIR2	Cuir vachette
+055	CUIR3	Cuir buffle
+055	CUIR4	Cuir bison
+055	CUIR5	Cuir kangourou
+062	LED1	Feux LED 5 Ampères
+062	LED1	Feux LED 10 Ampères
+062	LED1	Feux LED 20 Ampères
+
+
