@@ -16,10 +16,11 @@ Objectif
 	- [x] CDOBJ	: Code objet
 	- [x] CRIT	: critère
 * bvm
-	- ????
+	- [ ] ????
 
-###Construire la table *parc_apv* suivante :
+### Construire la table suivante :
 
+* parc_apv
 	- [x] CDGAM
 	- [x] NUMFE
 	- [x] CDVAR
