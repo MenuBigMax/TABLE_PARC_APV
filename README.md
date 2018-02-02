@@ -1,8 +1,11 @@
-﻿#TABLE PARC APRES-VENTE
------------------------
+﻿TABLE PARC APRES-VENTE
+======================
 
-##Objectif
-A partir des tables suivantes (clefs primaires cochées) :
+Objectif
+---------
+
+### A partir des tables suivantes (clefs primaires cochées) :
+
 * nomenclature
 	- [x] CDGAM	: code gamme
 	- [x] NUMFE	: fonction élémentaire
@@ -14,7 +17,9 @@ A partir des tables suivantes (clefs primaires cochées) :
 	- [x] CRIT	: critère
 * bvm
 	- ????
-Construire la table *parc_apv* suivante :
+
+###Construire la table *parc_apv* suivante :
+
 	- [x] CDGAM
 	- [x] NUMFE
 	- [x] CDVAR
