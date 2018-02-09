@@ -1,5 +1,5 @@
 rm(list=ls())
-setwd("C:/Users/Maxime/OneDrive/PROJET/RENAULT/TABLE_PARC_APV")
+setwd("..") #go back one level
 
 # packages
 
