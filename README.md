@@ -1,4 +1,4 @@
-﻿TABLE PARC APRES-VENTE
+﻿ 	TABLE PARC APRES-VENTE
 ======================
 
 Objectif
@@ -15,8 +15,18 @@ Objectif
 * critere
 	- [x] CDOBJ	: Code objet
 	- [x] CRIT	: critère
-* bvm
-	- [ ] ????
+* bvm_brut
+	- [x] VIN	: Vehicle Identification Number (utilisés depuis 1954 pour identifier chaque véhicule automobile)
+	- [ ] CDGAM	: Code gamme
+	- [ ] 002	: Critère 002
+	- [ ] 003	: Critère 003
+	- [ ] ...	: ...
+* veh_manu_CDGAM-YEAR
+	- [X] CDGAM	: Code gamme
+	- [X] YEAR	: Année
+	- [ ] NB_VEH_MANUFACTURED	: Nombre d'exemplaires fabriqués
+
+Les données de ces tables ont été totalement créées pour la recette des algorithmes. Elles ne peuvent pas être considérées comme reflètant une réalité.
 
 ### Construire la table suivante :
 
@@ -24,7 +34,7 @@ Objectif
 	- [x] CDGAM
 	- [x] NUMFE
 	- [x] CDVAR
-	- [x] DATE	: date des quantités calculées
+	- [x] DTCALC	: date des quantités calculées
 	- [ ] QTCOM	: nombre de véhicules commercialisés 
 	- [ ] QTFAB	: nombre de véhicules fabriqués
 	- [ ] QTFACT	: nombre de véhicules facturés
