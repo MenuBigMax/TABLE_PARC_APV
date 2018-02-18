@@ -14,8 +14,8 @@ bv <- read.table('recipe_data/bvm_brut.txt', header=T, sep=';', fileEncoding="UT
 
 
 # mtc
-des <- give.cdobj(id.mtc=LETTERS[1:length(ncltr$MTCFIX)], mtc=ncltr$MTCFIX, dic.o=crit$CDOBJ, dic.c=crit$CRIT)
-des2 <- table(des)
+des <- give.cdobj(id.mtc=1:length(ncltr$MTCFIX), mtc=ncltr$MTCFIX, dic.o=crit$CDOBJ, dic.c=crit$CRIT)
+des2 <- table(des[, c('id.mtc', 'cdobj')])
 ord  <- list(col=order(colSums(des2)), row=order(rowSums(des2)))
 des2[ord$row, ord$col]
 

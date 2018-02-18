@@ -15,11 +15,12 @@ break_fleet.row.recursive <- function(A, CDG, YEAR, VOL){
 }
 
 # From columns of mtc and a dictionary (DATA FUNCTION FORMAT) :
-# - id.mtc, mtc : (nx1) columns of MTC and its identity
-# - dic.o, dic.c : (kx1) columns of object code and its associated criteria
+# - 'id.mtc', 'mtc' : (nx1) columns of MTC and its identity
+# - 'dic.o', 'dic.c' : (kx1) columns of object code and its associated criteria
 # Return a rows-table where : 
-# - id.mtc is the MTC identity above
-# - cobj is one of the object code concered by the MTC
+# - 'id.mtc' is the MTC identity above
+# - 'cobj' is one of the object code concered by the MTC
+# - 'filt' is wich criteria(s) of the same row 'cdobj' has to be queried
 
 
 give.cdobj <- function(id.mtc, mtc, dic.o, dic.c){
@@ -27,12 +28,14 @@ give.cdobj <- function(id.mtc, mtc, dic.o, dic.c){
   n <- length(mtc)
   
   # matrix of special characters position
-  p <- data.frame(id.mtc=id.mtc, mtc=mtc, suiv=NA, comma=NA, slash=NA, last=NA, tocomp=NA, end=NA, crit=NA)
+  p <- data.frame(id.mtc=id.mtc, mtc=mtc, suiv=NA, comma=NA, slash=NA, last=NA, tocomp=NA, tofilter=NA, end=NA, crit=NA, filt=NA)
   p$comma <- as.integer(regexpr(",", mtc))-1
   p$slash <- as.integer(regexpr("/", mtc))-1
   p$last <- nchar(mtc)
   
   p$tocomp <- apply(p[,c('comma', 'slash', 'last')], 1, function(a) min(a[a>0], na.rm=T))
+  p$tofilter <- apply(p[,c( 'slash', 'last')], 1, function(a) min(a[a>0], na.rm=T))
+  p$filt <- gsub(",", " OR ", substr(mtc, 1, p$tofilter))
   p$end <- p$slash<0
   
   # criteria searching in the dictionary
@@ -43,5 +46,5 @@ give.cdobj <- function(id.mtc, mtc, dic.o, dic.c){
   # next iteration
   p$suiv <- mapply(substr, x=p$mtc, start=p$slash+2, stop=p$last)
   
-  if(sum(p$end)==n) return(p[, c('id.mtc', 'cdobj')]) else return(rbind(p[, c('id.mtc', 'cdobj')], give.cdobj(p$id.mtc[!p$end], p$suiv[!p$end], dic.o, dic.c)))
+  if(sum(p$end)==n) return(p[, c('id.mtc', 'cdobj', 'filt')]) else return(rbind(p[, c('id.mtc', 'cdobj', 'filt')], give.cdobj(p$id.mtc[!p$end], p$suiv[!p$end], dic.o, dic.c)))
 }
